@@ -1,0 +1,179 @@
+/* Refactoring for full-width sticky header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: transparent;
+}
+
+/* Scrolled state: minimal and more opaque */
+.scrolled {
+  background-color: #ffffff; /* Solid white */
+  /* backdrop-filter removed */
+  /* padding reduced removed to prevent jump */
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05); /* Very minimal 1px border-shadow */
+}
+
+.innerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  transition: padding 0.3s ease;
+  position: relative; /* For absolute nav */
+}
+
+/* Removed separate .scrolled .innerContainer rule to keep height constant */
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+/* Logo Icon Design: Purple rounded square with white concentric circles */
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--primary);
+  border-radius: 8px; /* Rounded square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoCircle {
+  width: 18px;
+  height: 18px;
+  border: 4px solid white; /* The white ring */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoDot {
+  width: 6px;
+  height: 6px;
+  background-color: white; /* The center dot */
+  border-radius: 50%;
+}
+
+.logoText {
+  color: #0F172A; /* Dark slate */
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.link {
+  color: #64748B; /* Slate gray */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px; /* Space for the line */
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease-out;
+}
+
+.link:hover {
+  color: var(--primary);
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Removed static .activeLink styles as requested ("Home is always underlined that is not the design") */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.signIn {
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.ctaButton {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.ctaButton:hover {
+  background-color: var(--primary-hover);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background-color: #f9fafb;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.username {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  padding-right: 4px;
+}

@@ -1,0 +1,92 @@
+.window {
+  background-color: #0d1117; /* Dark background */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  color: #c9d1d9;
+  width: 100%;
+  max-width: 500px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #0d1117; /* Same as bg or slightly lighter? */
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.filename {
+  color: #8b949e;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+.content {
+  padding: 20px 24px 24px;
+  background-color: #161b22; /* Lighter than header (#0d1117) */
+}
+
+.codeBlock {
+  margin-bottom: 24px;
+}
+
+.line {
+  display: flex;
+  line-height: 1.6;
+}
+
+.lineNumber {
+  color: #484f58;
+  width: 24px;
+  text-align: right;
+  margin-right: 16px;
+  user-select: none;
+}
+
+.comment { color: #8b949e; font-style: italic; }
+.keyword { color: #ff7b72; } /* Pinkish red for fetch/method */
+.string { color: #a5d6ff; } /* Light blue for strings */
+.property { color: #7ee787; } /* Green for keys */
+.brace, .paren, .text { color: #c9d1d9; }
+
+.tab {
+  display: inline-block;
+  width: 20px;
+}
+
+.responseLabel {
+  color: #8b949e;
+  font-size: 12px;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.responseBlock {
+  background-color: #21262d; /* Lighter than editor (#161b22) */
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #30363d;
+}

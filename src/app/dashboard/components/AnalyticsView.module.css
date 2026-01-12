@@ -1,0 +1,204 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.controlsHeader {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.dropdown {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.chartContainer {
+  flex: 1;
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 30px; /* Space for X axis labels */
+  padding-left: 30px; /* Space for Y axis labels */
+}
+
+/* Mock Chart Grid */
+.chartGrid {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 0;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gridLine {
+  width: 100%;
+  border-top: 1px solid #f3f4f6;
+  position: relative;
+}
+
+.yLabel {
+  position: absolute;
+  left: -25px;
+  top: -6px;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.chartLineContainer {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 0;
+  bottom: 30px;
+  z-index: 10;
+}
+
+.xAxis {
+  position: absolute;
+  bottom: 0px;
+  left: 30px;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+
+.xLabel {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.chartControls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.controlBtn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.controlBtn:hover {
+  opacity: 0.9;
+}
+
+.controlBtnSecondary {
+  background: #1e1b4b; /* Dark navy for Week */
+}
+
+/* Usage Donut */
+.usageContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 24px;
+}
+
+.donutWrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.donutCircle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.donutText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.usageLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+.usageItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.usageLabel {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.usageValue {
+  color: #4f46e5;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.usageReset {
+  color: #4b5563;
+  font-size: 13px;
+  margin-top: 12px;
+}

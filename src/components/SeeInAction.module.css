@@ -1,0 +1,293 @@
+.section {
+  width: 100%;
+  background-color: #F8FAFC; /* Light Grey Background */
+  padding: 8rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* --- Left Side: Demo Card --- */
+.demoWrapper {
+  flex: 1;
+  position: relative;
+  /* The subtle purple glow behind the card */
+  /* Using a pseudo-element or absolute div for the glow might be cleaner, 
+     but box-shadow works for simple cases. The image shows a large diffuse glow. */
+}
+
+.glowEffect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.4) 0%, rgba(167, 139, 250, 0) 70%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.demoCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08); /* Clean crisp shadow */
+  border: 1px solid #F1F5F9;
+  position: relative;
+  z-index: 1;
+}
+
+/* Search Row */
+.searchRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.searchInputWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94A3B8;
+  width: 18px;
+  height: 18px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #F8FAFC;
+  outline: none;
+  color: #334155;
+}
+
+.searchButton {
+  background-color: var(--primary); /* Use variable */
+  color: white;
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.searchButton:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Not Found State */
+.notFoundState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+  text-align: center;
+}
+
+.notFoundText {
+  color: #64748B;
+  font-size: 1rem;
+}
+
+.requestButton {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.requestButton:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Result Card Box */
+.resultBox {
+  border: 1px solid #F1F5F9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #fff; /* Ensure it looks layered */
+}
+
+/* Logo Header */
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.logoInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.logoThumbnail {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.companyName {
+  font-weight: 700;
+  color: #0F172A;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.companyUrl {
+  color: #64748B;
+  font-size: 0.9rem;
+}
+
+.activeBadge {
+  background-color: #DCFCE7; /* Light green bg */
+  color: #166534; /* Dark green text */
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Details Grid */
+.detailsGrid {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.detailCard {
+  flex: 1;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  color: #64748B;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.colorValue {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.colorDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #4285F4; /* Google Blue mock */
+}
+
+.formatBadges {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.badge {
+  background: #F1F5F9;
+  color: #475569;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+
+/* --- Right Side: Content --- */
+.contentWrapper {
+  flex: 1;
+  max-width: 500px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #334155;
+  font-size: 1rem;
+}
+
+.checkIcon {
+  color: #10B981; /* Green check */
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .section {
+    flex-direction: column-reverse; /* Content on top, visual on bottom usually better, but design might imply otherwise. Let's stack naturally. */
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+    gap: 4rem;
+  }
+  
+  .heading { font-size: 2rem; }
+  
+  .demoWrapper { width: 100%; }
+}
