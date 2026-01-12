@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import styles from './dashboard.module.css';
 import Header from '@/components/Header';
-import ApiKeysView from './components/ApiKeysView';
-import AnalyticsView from './components/AnalyticsView';
-import SettingsView from './components/SettingsView';
+import ApiKeysView from '@/app/dashboard/components/ApiKeysView';
+import AnalyticsView from '@/app/dashboard/components/AnalyticsView';
+import SettingsView from '@/app/dashboard/components/SettingsView';
 
 type Tab = 'analytics' | 'api-keys' | 'settings';
 
