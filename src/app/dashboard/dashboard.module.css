@@ -14,6 +14,8 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .titleSection h1 {
@@ -64,6 +66,46 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .headerRight {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dropdownWrapper {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerRight {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .dropdownWrapper {
+    align-self: flex-start;
+  }
+  
+  .tabs {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .main {
+    padding: 24px 16px;
+  }
 }
 
 .dropdownWrapper {

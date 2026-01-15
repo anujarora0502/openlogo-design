@@ -280,11 +280,9 @@
 }
 
 @media (max-width: 900px) {
-  .section {
-    flex-direction: column-reverse; /* Content on top, visual on bottom usually better, but design might imply otherwise. Let's stack naturally. */
+  .container {
     flex-direction: column;
-    padding: 4rem 1.5rem;
-    gap: 4rem;
+    gap: 3rem;
   }
   
   .heading { font-size: 2rem; }

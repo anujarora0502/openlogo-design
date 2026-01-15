@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import styles from './AnalyticsView.module.css';
 
 export default function AnalyticsView() {
+  const [timeRange, setTimeRange] = useState<'month' | 'week'>('month');
+
   return (
     <div className={styles.container}>
 
@@ -8,7 +11,16 @@ export default function AnalyticsView() {
       <div className={styles.grid}>
         {/* Requests Chart */}
         <div className={styles.card}>
-          <h2 className={styles.cardTitle}>Requests</h2>
+          <div className={styles.cardHeader}>
+             <h2 className={styles.cardTitle}>Requests</h2>
+             <button className={styles.refreshBtn} aria-label="Refresh">
+               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                 <path d="M23 4v6h-6"></path>
+                 <path d="M1 20v-6h6"></path>
+                 <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+               </svg>
+             </button>
+          </div>
           
           <div className={styles.chartContainer}>
             {/* Background Grid */}
@@ -54,9 +66,20 @@ export default function AnalyticsView() {
           </div>
 
           <div className={styles.chartControls}>
-            <button className={styles.controlBtn}>Month</button>
-            <button className={`${styles.controlBtn} ${styles.controlBtnSecondary}`}>Week</button>
-            <button className={styles.controlBtn}>Refresh</button>
+            <div className={styles.segmentControl}>
+              <button 
+                className={`${styles.segmentBtn} ${timeRange === 'month' ? styles.segmentBtnActive : ''}`}
+                onClick={() => setTimeRange('month')}
+              >
+                Month
+              </button>
+              <button 
+                className={`${styles.segmentBtn} ${timeRange === 'week' ? styles.segmentBtnActive : ''}`}
+                onClick={() => setTimeRange('week')}
+              >
+                Week
+              </button>
+            </div>
           </div>
         </div>
 

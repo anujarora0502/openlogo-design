@@ -2,6 +2,7 @@
   position: relative;
   padding: 4rem 2rem 8rem;
   overflow: hidden;
+  isolation: isolate; /* Create stacking context for z-index: -1 child */
 }
 
 .gridBackground {
