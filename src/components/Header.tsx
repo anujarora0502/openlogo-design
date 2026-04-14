@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
+import ToastContainer, { showToast } from './Toast';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,37 +20,46 @@ export default function Header() {
   const pathname = usePathname();
   const isDashboard = pathname === '/dashboard';
 
-  return (
-    <header className={`${styles.header} ${isScrolled || isDashboard ? styles.scrolled : ''}`}>
-      <div className={styles.innerContainer}>
-        <Link href="/" className={styles.logoContainer}>
-          <div className={styles.logoIcon}>
-            <div className={styles.logoCircle}>
-              <div className={styles.logoDot}></div>
-            </div>
-          </div>
-          <span className={styles.logoText}>Openlogo</span>
-        </Link>
-        
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.link}>Home</Link>
-          <Link href="#" className={styles.link}>Docs</Link>
-          <Link href="#" className={styles.link}>Features</Link>
-          <Link href="#" className={styles.link}>Pricing</Link>
-          <Link href="#" className={styles.link}>About</Link>
-        </nav>
+  const handleDocsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    showToast('Coming Soon', 'The Documentation page has not been added yet.');
+  };
 
-        <div className={styles.actions}>
-          {isDashboard ? (
-            <div className={styles.profile}>
-              <div className={styles.avatar}>A</div>
-              <span className={styles.username}>Anuj</span>
+  return (
+    <>
+      <header className={`${styles.header} ${isScrolled || isDashboard ? styles.scrolled : ''}`}>
+        <div className={styles.innerContainer}>
+          <Link href="/" className={styles.logoContainer}>
+            <div className={styles.logoIcon}>
+              <div className={styles.logoCircle}>
+                <div className={styles.logoDot}></div>
+              </div>
             </div>
-          ) : (
-            <Link href="/dashboard" className={styles.ctaButton}>Get Started</Link>
-          )}
+            <span className={styles.logoText}>Openlogo</span>
+          </Link>
+          
+          <nav className={styles.nav}>
+            <Link href="/" className={styles.link}>Home</Link>
+            <a href="#" className={styles.link} onClick={handleDocsClick}>Docs</a>
+            <Link href="#" className={styles.link}>Features</Link>
+            <Link href="#" className={styles.link}>Pricing</Link>
+            <Link href="#" className={styles.link}>About</Link>
+          </nav>
+
+          <div className={styles.actions}>
+            {isDashboard ? (
+              <div className={styles.profile}>
+                <div className={styles.avatar}>A</div>
+                <span className={styles.username}>Anuj</span>
+              </div>
+            ) : (
+              <Link href="/dashboard" className={styles.ctaButton}>Get Started</Link>
+            )}
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      <ToastContainer />
+    </>
   );
 }
