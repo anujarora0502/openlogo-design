@@ -30,11 +30,8 @@ export default function Header() {
       <header className={`${styles.header} ${isScrolled || isDashboard ? styles.scrolled : ''}`}>
         <div className={styles.innerContainer}>
           <Link href="/" className={styles.logoContainer}>
-            <div className={styles.logoIcon}>
-              <div className={styles.logoCircle}>
-                <div className={styles.logoDot}></div>
-              </div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/website-logo.svg" alt="Openlogo" className={styles.websiteLogoImg} />
             <span className={styles.logoText}>Openlogo</span>
           </Link>
           

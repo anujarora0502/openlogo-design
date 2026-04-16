@@ -39,32 +39,10 @@
   color: #111;
 }
 
-/* Logo Icon Design: Purple rounded square with white concentric circles */
-.logoIcon {
-  width: 32px;
-  height: 32px;
-  background-color: var(--primary);
-  border-radius: 8px; /* Rounded square */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logoCircle {
-  width: 18px;
-  height: 18px;
-  border: 4px solid white; /* The white ring */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logoDot {
-  width: 6px;
-  height: 6px;
-  background-color: white; /* The center dot */
-  border-radius: 50%;
+.websiteLogoImg {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
 
 .logoText {

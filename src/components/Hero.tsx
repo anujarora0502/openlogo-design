@@ -1,5 +1,5 @@
 import styles from './Hero.module.css';
-import CodeWindow from './CodeWindow';
+import AnimatedLogoCloud from './AnimatedLogoCloud';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -32,7 +32,7 @@ export default function Hero() {
         </div>
         
         <div className={styles.visual}>
-          <CodeWindow />
+          <AnimatedLogoCloud />
         </div>
       </div>
     </section>

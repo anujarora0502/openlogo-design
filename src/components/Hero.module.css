@@ -97,10 +97,17 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  transition: all 0.2s;
 }
 
 .secondaryBtn:hover {
   color: var(--primary);
+  border-color: var(--primary);
+  background-color: rgba(79, 70, 229, 0.05);
 }
 
 .visual {
