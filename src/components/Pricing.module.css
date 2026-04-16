@@ -1,0 +1,175 @@
+.section {
+  padding: 8rem 2rem;
+  background-color: transparent;
+  width: 100%;
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #64748B;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  max-width: 450px;
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.cardPro {
+  background: #0F172A;
+  border-color: #0F172A;
+  color: white;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  transform: scale(1.02);
+}
+
+.planName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0F172A;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardPro .planName {
+  color: #CBD5E1;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 2.5rem;
+}
+
+.price {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.04em;
+}
+
+.cardPro .price {
+  color: white;
+}
+
+.period {
+  font-size: 1.1rem;
+  color: #64748B;
+  margin-left: 0.5rem;
+  font-weight: 500;
+}
+
+.cardPro .period {
+  color: #94A3B8;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cardPro .featureItem {
+  color: #F8FAFC;
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+  margin-right: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.cardPro .checkIcon {
+  color: #818CF8; /* Lighter primary color for dark background */
+}
+
+.button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
+}
+
+.button:hover {
+  border-color: #94A3B8;
+  background: #F8FAFC;
+}
+
+.buttonPro {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
+.buttonPro:hover {
+  background: var(--primary-hover);
+  border-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 100%;
+  }
+  .cardPro {
+    transform: none;
+  }
+}

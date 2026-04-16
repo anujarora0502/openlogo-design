@@ -1,0 +1,93 @@
+.section {
+  padding: 6rem 2rem;
+  background-color: transparent;
+  width: 100%;
+}
+
+.inner {
+  max-width: 800px; /* FAQs should be more narrow for reading */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.accordionList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px -4px rgba(79, 70, 229, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px -6px rgba(79, 70, 229, 0.1);
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0F172A;
+  text-align: left;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+.contentWrapper {
+  overflow: hidden;
+}
+
+.content {
+  padding: 0 2rem 1.5rem;
+  color: #475569;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .button {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+  .content {
+    padding: 0 1.5rem 1.25rem;
+  }
+}
